@@ -65,36 +65,6 @@
 (defvar *charwis* nil)
 (defvar *charcha* nil)
 
-(defun npc-generate
-    (&optional gender race)
-  "Creates an npc with an specified Gender or Race.
-   Gender can be M or F.
-   Race can be Aasimar, Dragonborn, Dwarf, Elf, Firbolg, Gnome, Goblin,
-   Goliath, Halfling, Half-elf, Half-orc, Human, Kenku, Lizard, Orc,
-   Tabaxi, Tiefling, Triton, Trogolodyte.
-   "
-  (setf *chargender* nil)
-  (setf *charrace* nil)
-  (if (string-equal gender nil)
-      (setf *chargender*
-            (mapconcat 'identity
-                       (seq-random-elt *gender*)
-                       " "
-                       )
-            )
-    (setf *chargender* gender))
-  (if (string-equal race nil)
-      (setf *charrace*
-            (mapconcat 'identity
-                       (seq-random-elt *race*)
-                       " "
-                       )
-            )
-    (setf *charrace* race)
-    )
-  ;; race conditionals
-  )
-
 (defun dragonborn-race
     (gender)
   (setf *charname* (mapconcat 'identity (dragon-born-name) " "))
@@ -687,4 +657,307 @@
   (setf *charint* (+ (d6) (d6) (d6)))
   (setf *charwis* (+ (d6) (d6) (d6)))
   (setf *charcha* (+ (d6) (d6) (d6)))
+  )
+
+(defun npc-generate
+    (&optional gender race)
+  "Creates an npc with an specified Gender or Race.
+   Gender can be M or F.
+   Race can be Dragonborn, Dwarf, Elf, Gnome, Halfling,
+   Half-elf, Half-orc, Human, Tiefling.
+   "
+  (setf *chargender* nil)
+  (setf *charrace* nil)
+  (if (string-equal gender nil)
+      (setf *chargender*
+                       (seq-random-elt *gender*)
+            )
+    (setf *chargender* gender))
+  ;; set race
+  (if (string-equal race nil)
+      (setf *charrace*
+                       (seq-random-elt *race*)
+            )
+    (setf *charrace* race)
+    )
+  ;; Race conditionals
+  (if (string-equal *charrace* "Dragonborn")
+      (dragonborn-race *chargender*))
+  (if (string-equal *charrace* "Dwarf")
+      (dwarf-race *chargender*))
+  (if (string-equal *charrace* "Elf")
+      (elf-race *chargender*))
+  (if (string-equal *charrace* "Gnome")
+      (gnome-race *chargender*))
+  (if (string-equal *charrace* "Halfling")
+      (halfling-race *chargender*))
+  (if (string-equal *charrace* "Half-elf")
+      (half-elf-race *chargender*))
+  (if (string-equal *charrace* "Half-orc")
+      (half-orc-race *chargender*))
+  (if (string-equal *charrace* "Human")
+      (human-race *chargender*))
+  (if (string-equal *charrace* "Tiefling")
+      (tiefling-race *chargender*)
+    )
+  ;; Write Stats to screen
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":NAME:")
+                     nil
+                     (*charname*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":RACE:")
+                     nil
+                     (*charrace*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":SEX:")
+                     nil
+                     (*chargender*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":AGE:")
+                     nil
+                     (*charage*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":OCCUPATION:")
+                     nil
+                     (*charoccupation*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":FACE:")
+                     nil
+                     (*charface*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":HAIR:")
+                     nil
+                     (*charhair*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":SKIN:")
+                     nil
+                     (*charskin*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":EYES:")
+                     nil
+                     (*chareyes*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":HEIGHT:")
+                     nil
+                     (*charheight*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":BUILD:")
+                     nil
+                     (*charbuild*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":PERSONALITY:")
+                     nil
+                     (*charspecial1*)
+                     nil
+                     (*charspecial2*)
+                     nil
+                     (*chartrait1*)
+                     nil
+                     (*chartrait2*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":SORIENTATION:")
+                     nil
+                     (*charorientation*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":RELATIONSHIP:")
+                     nil
+                     (*charrelationstatus*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":RELIGION:")
+                     nil
+                     (*charrelationstatus*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":QUIRK:")
+                     nil
+                     (*charquirk*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":HOOK:")
+                     nil
+                     (*charhook*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":STRENGTH:")
+                     nil
+                     (*charstr*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":DEXTERITY:")
+                     nil
+                     (*chardex*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":CONSTITUTION:")
+                     nil
+                     (*charcon*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":INTELLIGENCE:")
+                     nil
+                     (*charint*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":WISDOM:")
+                     nil
+                     (*charwis*)
+                     nil
+                     )
+              " "
+              )
+   )
+  (insert
+   (mapconcat 'identity
+              (apply 'append
+                     (make-list 1 ":CHARISMA:")
+                     nil
+                     (*charcha*)
+                     nil
+                     )
+              " "
+              )
+   )
   )
