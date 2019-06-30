@@ -1,3 +1,5 @@
+;; Verified, all return string
+
 (defun learned
     ()
   (seq-random-elt
@@ -277,17 +279,12 @@
 (defun occupation
     ()
   (seq-random-elt
-   (apply 'append
-          (class-list)
-          nil
-          (profession)
-          nil
-          (profession)
-          nil
-          (profession)
-          nil
-          (profession)
-          nil
-          )
+   (list
+    (class-list)
+    (profession)
+    (profession)
+    (profession)
+    (profession)
+    )
    )
   )

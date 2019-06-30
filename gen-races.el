@@ -1,3 +1,5 @@
+;; Verified, all return strings
+
 (defun race-allergy
     ()
   (seq-random-elt
@@ -82,21 +84,13 @@
     ()
   (seq-random-elt
    (apply 'append
-          (make-list 2 "Aasimar")
-          nil
           (make-list 4 "Dragonborn")
           nil
           (make-list 11 "Dwarf")
           nil
           (make-list 16 "Elf")
           nil
-          (make-list 2 "Firbolg")
-          nil
           (make-list 7 "Gnome")
-          nil
-          (make-list 1 "Goblin")
-          nil
-          (make-list 2 "Goliath")
           nil
           (make-list 8 "Halfling")
           nil
@@ -106,19 +100,7 @@
           nil
           (make-list 70 "Human")
           nil
-          (make-list 2 "Kenku")
-          nil
-          (make-list 2 "Lizardfolk")
-          nil
-          (make-list 3 "Orc")
-          nil
-          (make-list 2 "Tabaxi")
-          nil
           (make-list 4 "Tiefling")
-          nil
-          (make-list 4 "Triton")
-          nil
-          (make-list 1 "Troglodyte")
           nil
           )
    )

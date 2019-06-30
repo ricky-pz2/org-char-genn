@@ -1,3 +1,5 @@
+;; Verified, all return string
+
 (defun orc-god-pre
     ()
   (seq-random-elt
@@ -52,7 +54,7 @@
           nil
           (make-list 1 "Tyr, God of justice. (Lawful Good)")
           nil
-          (make-list 1 "Ubtao, God of creation, jungles, Chult,, the Chultans, dinosaurs. (True Neutral)")
+          (make-list 1 "Ubtao, God of creation, jungles, Chult, the Chultans, dinosaurs. (True Neutral)")
           nil
           )
    )
@@ -209,174 +211,90 @@
 (defun human-god
     ()
   (seq-random-elt
-   (apply 'append
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (good-god))
-          nil
-          (make-list 1 (evil-god-pre))
-          nil
-          (make-list 1 (evil-god-pre))
-          nil
-          (make-list 1 (evil-god-pre))
-          nil
-          (make-list 1 (evil-god-pre))
-          nil
-          (make-list 1 (evil-god-pre))
-          nil
-          (make-list 1 (dragon-god-pre))
-          nil
-          (make-list 1 (drow-god-pre))
-          nil
-          (make-list 1 (dwarf-god-pre))
-          nil
-          (make-list 1 (elf-god))
-          nil
-          (make-list 1 (elf-god))
-          nil
-          (make-list 1 (gnome-god-pre))
-          nil
-          (make-list 1 (halfing-god-pre))
-          nil
-          (make-list 1 (orc-god-pre))
-          nil
-
+   (list
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (good-god)
+          (evil-god-pre)
+          (evil-god-pre)
+          (evil-god-pre)
+          (evil-god-pre)
+          (evil-god-pre)
+          (dragon-god-pre)          
+          (drow-god-pre)
+          (dwarf-god-pre)
+          (elf-god-pre)
+          (elf-god-pre)
+          (gnome-god-pre)
+          (halfing-god-pre)
+          (orc-god-pre)
           )
    )
   )
@@ -387,9 +305,9 @@
    (apply 'append
           (make-list 4 "Gruumsh, God of orcs, conquest, survivial, strength, territory. (Chaotic Evil)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -401,9 +319,9 @@
    (apply 'append
           (make-list 3 "Yondalla, Goddess of halflings, bounty, protection, children, security, leadership, wisdom, creation and family. (Lawful Good)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -415,9 +333,9 @@
    (apply 'append
           (make-list 3 "Garl Glittergold, God of gnomes, protection, humour, trickery, gem cutting. (Neutral Good)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -439,13 +357,13 @@
           nil
           (make-list 1 "Shar, Goddess of dark, night, loss, forgetfulness, unrevealed secrets, caverns, dungeons, the Underdark.(Neutral Evil)")
           nil
-          (make-list 1 (demon-god))
+          (list (demon-god))
           nil
-          (make-list 1 (demon-god))
+          (list (demon-god))
           nil
-          (make-list 1 (devil-god))
+          (list (devil-god))
           nil
-          (make-list 1 (devil-god))
+          (list (devil-god))
           nil
           )
    )
@@ -459,11 +377,13 @@
           nil
           (make-list 3 "Corellon Larethian, God of elves, magic, music, arts, crafts, war, poetry, bards, warriors. (Chaotic Good)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
+          nil
+          (list (human-god))
           nil
           )
    )
@@ -475,9 +395,9 @@
    (apply 'append
           (make-list 3 "Moradin, God of dwarves, creation, smithing, protection, metalcraft, stonework. (Lawful Good)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -491,13 +411,13 @@
           nil
           (make-list 1 "Ghaunadaur, Patron of abominations, oozes, slimes, jellies, outcasts, ropers and rebels. (Chaotic Evil)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -529,35 +449,35 @@
           nil
           (make-list 4 "Zorquan, God of the essence of dragons.(All alignments)")
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
-          (make-list 1 (human-god))
+          (list (human-god))
           nil
           )
    )
@@ -566,16 +486,12 @@
 (defun bad-gods
     ()
   (seq-random-elt
-   (apply 'append
-          (devil-god)
-          nil
-          (demon-god)
-          nil
-          (evil-god)
-          nil
-          (orc-god)
-          nil
-          )
+   (list
+    (devil-god)
+    (demon-god)
+    (evil-god)
+    (orc-god)
+    )
    )
   )
 
@@ -609,41 +525,22 @@
 
 (defun evil-worship
     ()
-  (mapconcat 'identity
-             (apply 'append
-                    (make-list 1 "claims to worship")
-                    nil
-                    (bad-gods)
-                    nil
-                    (make-list 1 ",but secretly")
-                    nil
-                    )
-             " "
-             )
+  (concat "claims to worship " (good-god) ", but secretly worships " (bad-gods))
   )
 
 (defun religion-select
     ()
   (seq-random-elt
-   (apply 'append
-          (make-list 1 "doesn't worship any god.")
-          nil
+   (list
+          "doesn't worship any god."
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           (human-god)
-          nil
           )
    )
   )

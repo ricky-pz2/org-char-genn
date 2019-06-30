@@ -1,3 +1,5 @@
+;;Verified all return string
+
 (defun monster-1
     ()
   (seq-random-elt
@@ -149,25 +151,9 @@
 (defun a-monster
     ()
   (seq-random-elt
-   (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "a")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "an")
-                            nil
-                            (monster-2)
-                            nil
-                            )
-                     " "
-                     )
-          )
+   (list
+    (concat "a " (monster-1))
+    (concat "an " (monster-2))
+    )
    )
   )

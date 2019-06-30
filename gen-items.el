@@ -1,3 +1,5 @@
+;;Verified, all return strings
+
 (defun collection
     ()
   (seq-random-elt
@@ -111,36 +113,6 @@
           (make-list 1 "bed")
           nil
           (make-list 1 "rocking chair")
-          nil
-          )
-   )
-  )
-
-(defun precious
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "pendant")
-          nil
-          (make-list 1 "ring")
-          nil
-          (make-list 1 "robe")
-          nil
-          (make-list 1 "trinket")
-          nil
-          (make-list 1 "bracelet")
-          nil
-          (make-list 1 "watch")
-          nil
-          (make-list 1 "amulet")
-          nil
-          (make-list 1 "tiara")
-          nil
-          (make-list 1 "gem")
-          nil
-          (make-list 1 "coin")
-          nil
-          (weapon)
           nil
           )
    )
@@ -261,101 +233,48 @@
 (defun weapon
     ()
   (seq-random-elt
-   (apply 'append
-          (simple-weapon)
-          nil
-          (simple-finesse)
-          nil
-          (simple-ranged)
-          nil
-          (martial-weapon)
-          nil
-          (martial-weapon)
-          nil
-          (martial-weapon)
-          nil
-          (martial-finesse)
-          nil
-          (martial-ranged)
-          nil
-          )
+   (list
+    (simple-weapon)
+    (simple-finesse)
+    (simple-ranged)
+    (martial-weapon)
+    (martial-weapon)
+    (martial-weapon)
+    (martial-finesse)
+    (martial-ranged)
+    )
    )       
+  )
+
+(defun precious
+    ()
+  (seq-random-elt
+   (list
+          "pendant"
+          "ring"
+          "robe"
+          "trinket"
+          "bracelet"
+          "watch"
+          "amulet"
+          "tiara"
+          "gem"
+          "coin"
+          (weapon)
+          )
+   )
   )
 
 (defun precious-item
     ()
   (seq-random-elt
-   (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "precious")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "precious")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "precious")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "precious")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "precious")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "magical")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "magical")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          )
+   (list
+    (concat "precious " (precious))
+    (concat "precious " (precious))
+    (concat "precious " (precious))
+    (concat "precious " (precious))
+    (concat "magical " (precious))
+    (concat "magical " (precious))
+    )
    )
   )

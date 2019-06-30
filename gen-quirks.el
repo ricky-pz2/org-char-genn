@@ -1,3 +1,5 @@
+;; Verified, return strings
+
 (load "gen-ctraits")
 (load "gen-gods")
 (load "gen-basic-dnd")
@@ -32,86 +34,6 @@
           (make-list 2 "cannot use their breath weapon.")
           nil
           (make-list 6 "they value their clan above anything else.")
-          nil
-          )
-   )
-  )
-
-(defun triton-quirks
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "is disgusted by human architecture.")
-          nil
-          (make-list 1 "feels more comfortable underwater.")
-          nil
-          (make-list 1 "will boast the greatness of Triton civilization at every opportunity.")
-          nil
-          (make-list 1 "speaks an antiquated version of common.")
-          nil
-          (make-list 1 "has a hard time understanding sarcasm.")
-          nil
-          (make-list 1 "is fascinated by the surface world, and can often be seen scribbling notes or drawings.")
-          nil
-          (make-list 1 "is surprised when people don't know everything about Triton culture.")
-          nil
-          (make-list 1 "is still struggling to understand the surface's culture.")
-          nil
-          (make-list 1 "always knows if it's going to rain.")
-          nil
-          (make-list 1 "goes swimming every day.")
-          nil
-          (make-list 1 "views other cultures as barbaric.")
-          nil
-          (make-list 1 "is deeply xenophobic.")
-          nil
-          )
-   )
-  )
-
-(defun aasimar-evil-quirk
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "seeks to spread misery and despair.")
-          nil
-          (make-list 1 "seeks to spread lies and fear.")
-          nil
-          (make-list 1 "seeks to spread sadness and sorrow.")
-          nil
-          (make-list 1 "seeks to raise an army of followers." )
-          nil
-          (make-list 1 "seeks to eradicate good aasimars.")
-          nil
-          (make-list 1 "seeks to eradicate followers of good gods.")
-          nil
-          (make-list 1 "seeks mindless destruction.")
-          nil
-          )
-   )
-  )
-
-(defun aasimar-good-quirk
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "seeks to spread compassion and hope.")
-          nil
-          (make-list 1 "seeks to spread knowledge and wisdom.")
-          nil
-          (make-list 1 "seeks to spread humor and joy.")
-          nil
-          (make-list 1 "seeks to teach people how to fight against evil.")
-          nil
-          (make-list 1 "seeks to forgive and reform evil creatures.")
-          nil
-          (make-list 1 "seeks to eradicate evil in all its forms.")
-          nil
-          (make-list 1 "seeks to destroy fallen aasimars.")
-          nil
-          (make-list 1 "seeks to punish wrongdoers.")
-          nil
-          (make-list 1 "seeks to undo all of evil's misdeeds.")
           nil
           )
    )
@@ -157,34 +79,6 @@
    )
   )
 
-(defun goliath-quirks
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 15 "only respects powerful and competent leaders.")
-          nil
-          (make-list 2 "openly mocks human society's structure.")
-          nil
-          (make-list 2 "challenges others to duels to the death.")
-          nil
-          (make-list 2 "feels at home in high altitude.")
-          nil
-          (make-list 2 "enjoys winter and cold temperatures.")
-          nil
-          (make-list 2 "will turn anything into an opportunity for training.")
-          nil
-          (make-list 2 "enjoys messing with other humanoids with short stature.")
-          nil
-          (make-list 2 "enjoys messing with other humanoids with tall stature.")
-          nil
-          (make-list 2 "dislikes depending on others.")
-          nil
-          (make-list 1 "maintains a friendly relationships with nearby giants.")
-          nil
-          )
-   )
-  )
-
 (defun half-quirks
     ()
   (seq-random-elt
@@ -212,72 +106,6 @@
           (make-list 1 "smiles constantly.")
           nil
           (make-list 1 "values community very highly.")
-          nil
-          )
-   )
-  )
-
-(defun kenku-quirks
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 18 "")
-          nil
-          (make-list 3 "will always try to perch on furniture.")
-          nil
-          (make-list 3 "spends most of free time on the top of buildings.")
-          nil
-          (make-list 3 "finds repetitive tasks soothing.")
-          nil
-          (make-list 2 "enjoys drawing copies of other drawings.")
-          nil
-          (make-list 2 "excels at sculpting wooden replicas of objects.")
-          nil
-          (make-list 2 "highly values the flock's teachings.")
-          nil
-          (make-list 3 "enjoys mimicking the voice of friends.")
-          nil
-          (make-list 2 "uses a different voice for every word when speaking.")
-          nil
-          (make-list 2 "is often found staring at the sky.")
-          nil
-          (make-list 3 "sentences are always ponctuated with seemingly random sounds.")
-          nil
-          )
-   )
-  )
-
-(defun lizard-quirks
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 12 "")          
-          nil
-          (make-list 2 "has no respect for creatures without scales.")
-          nil
-          (make-list 2 "pities creatures without armor, natural or made.")
-          nil
-          (make-list 2 "has a hard time taking clothes seriously.")
-          nil
-          (make-list 4 "considers dead bodies as food, no matter who they were while alive.")
-          nil
-          (make-list 4 "loves making small knives and tools out of bones.")
-          nil
-          (make-list 3 "longs for a life in the marshes.")
-          nil
-          (make-list 2 "sleeps best when mostly underwater.")
-          nil
-          (make-list 2 "prefers swimming to walking.")
-          nil
-          (make-list 2 "doesn't understand the concept of money.")
-          nil
-          (make-list 2 "has learned to laugh by observation. Still doesn't understand humor.")
-          nil
-          (make-list 2 "has a preference for live food.")
-          nil
-          (make-list 2 "doesn't understand sarcasm")
-          nil
-          (make-list 2 "has a hard time understanding and remembering names that aren't descriptive.")
           nil
           )
    )
@@ -367,25 +195,9 @@
           nil
           (make-list 3 "feels uncomfortable in a rich setting.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "misuses long words to sound smarter.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " misuses long words to sound smarter."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "misuses long words to sound smarter.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " misuses long words to sound smarter."))
           nil
           (make-list 2 "is totally oblivious to etiquette and social expectations.")
           nil
@@ -401,35 +213,11 @@
           nil
           (make-list 3 "always knows where to hide.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks for help.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " asks for help."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks for help.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " asks for help."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks for help.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " asks for help."))
           nil
           (make-list 3 "always eat like it's their last meal. ")
           nil
@@ -438,26 +226,6 @@
           (make-list 3 "uses very foul language.")
           nil
           (make-list 2 "doesn't bathe.")
-          nil
-          )
-   )
-  )
-
-(defun aasimar-good-or-evil
-    ()
-  (seq-random-elt
-   (apply 'append
-          (aasimar-good-quirk)
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (aasimar-evil-quirk)
-                            nil
-                            (evil-god)
-                            nil
-                            )
-                     " "
-                     )
           nil
           )
    )
@@ -489,29 +257,11 @@
           nil
           (make-list 2 "never knows the current time and date.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            )
-                     " ")
+          (list (concat (frequency) " uses terms from a different language as they speak."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            )
-                     " ")
+          (list (concat (frequency) " uses terms from a different language as they speak."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            )
-                     " ")
+          (list (concat (frequency) " uses terms from a different language as they speak."))
           nil
           (make-list 4 "is always late.")
           nil
@@ -533,42 +283,14 @@
           nil
           (make-list 2 "is more comfortable underground.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "hums old dwarven songs.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "hums old dwarven songs.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "hums old dwarven songs.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "hums old dwarven songs.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " hums old dwarven songs."))
+          nil
+          (list (concat (frequency) " hums old dwarven songs."))
+          nil
+          (list (concat (frequency) " hums old dwarven songs."))
+          nil
+          (list (concat (frequency) " hums old dwarven songs."))
+          nil
           (make-list 2 "misses the world as they used to know it.")
           nil
           (make-list 3 "is strongly rooted within tradition.")
@@ -616,55 +338,16 @@
           nil
           (make-list 4 "never knows the current time and date.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "paints")
-                            nil
-                            (attractiveness)
-                            nil
-                            (make-list 1 "paintings in their spare time.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "paints")
-                            nil
-                            (attractiveness)
-                            nil
-                            (make-list 1 "paintings in their spare time.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses terms from a different language as they speak.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "paints " (attractiveness) " paintings in their spare time."))
+          nil
+          (list (concat "paints " (attractiveness) " paintings in their spare time."))
+          nil
+          (list (concat (frequency) " uses terms from a different language as they speak."))
+          nil
+          (list (concat (frequency) " uses terms from a different language as they speak."))
+          nil
+          (list (concat (frequency) " uses terms from a different language as they speak."))
+          nil
           (make-list 4 "is always late.")
           nil
           (make-list 1 "has never declared himself an adult.")
@@ -747,41 +430,11 @@
           nil
           (make-list 3 "wants to know every side of a story before expressing an opinion.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "paranoid.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " paranoid."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "paranoid.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " paranoid."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "paranoid.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " paranoid."))
           nil
           (make-list 3 "works hard to play hard afterwards.")
           nil
@@ -797,441 +450,101 @@
           nil
           (make-list 3 "always carries food in their pockets.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks questions.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) "asks questions."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks questions.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "asks questions.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) "asks questions."))
           nil
           (make-list 3 "is a local sport champion.")
           nil
           (make-list 3 "laughs at inappropriate times.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "reacts violently to")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "reacts violently to " (mundane-object) "."))
+          nil 
+          (list (concat "reacts violently to " (mundane-object) "."))
+          nil 
+          (list (concat "reacts violently to " (mundane-object) "."))
+          nil 
+          (list (concat "is fascinated by " (mundane-object) "."))
+          nil 
+          (list (concat "is fascinated by " (mundane-object) "."))
+          nil 
+          (list (concat "is fascinated by " (mundane-object) "."))
+          nil 
+          (list (concat "doesn't like their profession, has always dreamed of becoming " (occupation) "."))
+          nil 
+          (list (concat "doesn't like their profession, has always dreamed of becoming " (occupation) "."))
+          nil 
+          (list (concat "doesn't like their profession, has always dreamed of becoming " (occupation) "."))
+          nil 
+          (list (concat "doesn't like their profession, has always dreamed of becoming " (occupation) "."))
+          nil 
+          (list (concat "believs that all " (race-allergy) "are planning to destroy the world."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "reacts violently to")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believs that all " (race-allergy) "are planning to destroy the world."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "reacts violently to")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believs that all " (race-allergy) "are planning to destroy the world."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is fascinated by")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believs that all " (race-allergy) "are planning to destroy the world."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is fascinated by")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "goes out at night secretly looking for " (mundane-object) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is fascinated by")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "goes out at night secretly looking for " (mundane-object) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "doesn't like their profession, has always dreamed of becoming")
-                            nil
-                            (occupation)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "doesn't like their profession, has always dreamed of becoming")
-                            nil
-                            (occupation)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "doesn't like their profession, has always dreamed of becoming")
-                            nil
-                            (occupation)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "doesn't like their profession, has always dreamed of becoming")
-                            nil
-                            (occupation)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that all")
-                            nil
-                            (race-allergy)
-                            nil
-                            (make-list 1 "are planning to destroy the world.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that all")
-                            nil
-                            (race-allergy)
-                            nil
-                            (make-list 1 "are planning to destroy the world.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that all")
-                            nil
-                            (race-allergy)
-                            nil
-                            (make-list 1 "are planning to destroy the world.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "goes out at night secretly looking for")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "goes out at night secretly looking for")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "goes out at night secretly looking for")
-                            nil
-                            (mundane-object)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "goes out at night secretly looking for " (mundane-object) "."))
           nil
           (make-list 3 "owns a box full of dead animals.")
           nil
           (make-list 3 "sets up local dance clubs")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that they are related to")
-                            nil
-                            (human-god)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believes that they are related to " (human-god) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that they are related to")
-                            nil
-                            (human-god)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believes that they are related to " (human-god) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "believes that they are related to")
-                            nil
-                            (human-god)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "believes that they are related to " (human-god) "."))
           nil
           (make-list 1 "goes to church to pick up sexual partners.")
           nil
           (make-list 3 "lies poorly on purpose.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "collects")
-                            nil
-                            (collection)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "collects " (collection) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "collects")
-                            nil
-                            (collection)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "collects " (collection) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "collects")
-                            nil
-                            (collection)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "collects " (collection) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "collects")
-                            nil
-                            (collection)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "collects " (collection) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "collects")
-                            nil
-                            (collection)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "collects " (collection) "."))
+          nil
+          (list (concat "collects " (collection) "."))
           nil
           (make-list 2 "secretly wants to become the ruler of the city.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (pet-animal)
-                            nil
-                            (make-list 1 "companion named")
-                            nil
-                            (pet-name)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (pet-animal) " companion named " (pet-name) "."))
           nil
           (make-list 3 "likes to swim.")
           nil
           (make-list 3 "has a beautiful singing voice.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "thinks a loud.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " thinks a lound"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "thinks a loud.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " thinks a lound"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "thinks a loud.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " thinks a lound"))
           nil
           (make-list 2 "is addicted to a local drug.")
           nil
@@ -1247,35 +560,13 @@
    (apply 'append
           (make-list 1 "sees divine omens in everything.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "talks aloud to their god.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " talks aloud to their god."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "quotes sacred texts.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " talks aloud to their god."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "misquotes sacred texts.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " quotes sacred texts."))
+          nil
+          (list (concat (frequency) " misquotes sacred texts."))
           nil
           (make-list 1 "is very intolerant towards other faiths.")
           nil
@@ -1291,17 +582,7 @@
           nil
           (make-list 1 "carries out a complicated religious ritual every morning.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "will")
-                            nil
-                            (frequency)
-                            nil
-                            (make-list 1 "pray at inopportunen moments.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "will " (frequency) " prays at inopportune moments."))
           nil
           (make-list 1 "tries to convert everyone they meets.")
           nil
@@ -1315,39 +596,15 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "uses long words to sound smart.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " uses long words to sound smart."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "gives money to the poor.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " gives money to the poor."))
           nil
           (make-list 1 "cannot tolerate rough living conditions.")
           nil
           (make-list 1 "disregards poorer people.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "inherited a")
-                            nil
-                            (inheritance)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "inherited a " (inheritance) "."))
           nil
           (make-list 1 "only dresses in very expensive clothes.")
           nil
@@ -1380,196 +637,3 @@
           )
    )
   )
-
-(defun tabaxi-quirks
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 7 "")
-          nil
-          (make-list 1 "is curious to a fault.")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "complains about how cold the weather is.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 1 "dislikes water.")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "wags their tail.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 1 "is constantly talking about their newest obsession.")
-          nil
-          (make-list 1 "can often be found purring when happy.")
-          nil
-          (make-list 1 "has a very deep knowledge of unusual facts and events.")
-          nil
-          (make-list 1 "has a tendency to steal curious items to study them.")
-          nil
-          (make-list 1 "knows everything there is to know about old prophecies.")
-          nil
-          (make-list 1 "spends all of their money on old baubles.")
-          nil
-          (make-list 1 "can often be found narrating ongoing events.")
-          nil
-          )
-   )
-  )
-(defun weird-quirk
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 30 "")
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "mostly wears")
-                            nil
-                            (color)
-                            nil
-                            (make-list 1 "clothes.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "never wears")
-                            nil
-                            (color)
-                            nil
-                            (make-list 1 "clothes.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "only wears")
-                            nil
-                            (color)
-                            nil
-                            (make-list 1 "clothes.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 1 "never takes off their footwear.")
-          nil
-          (make-list 1 "never wears footwear.")
-          nil
-          (make-list 1 "always wears a mask.")
-          nil
-          (make-list 1 "always wears a veil.")
-          nil
-          (make-list 2 "never sleeps in a bed.")
-          nil
-          (make-list 2 "refuses to light fires.")
-          nil
-          (make-list 2 "refuses to write.")
-          nil
-          (make-list 2 "never sits on a chair.")
-          nil
-          (make-list 2 "speaks only in riddles.")
-          nil
-          (make-list 2 "doesn't tolerate nicknames.")
-          nil
-          (make-list 2 "keeps a list of all their fallen enemies.")
-          nil
-          (make-list 2 "has an imaginary friend.")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "changes name.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "changes name.")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          )
-   )
-  )
-
-(defun firbolg-quirk
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "has been outcast for a murder forced to commit.")
-          nil
-          (make-list 1 "has been outcast for a murder.")
-          nil
-          (make-list 1 "got lost years ago and could never find home.")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "clan was slain by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "clan was slain by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 1 "homeland was destroyed by an earthquake.")
-          nil
-          (make-list 1 "homeland was destroyed by a tsunami.")
-          nil
-          (make-list 1 "homeland was destroyed by a viscious storm.")
-          nil
-          (make-list 1 "can sit for hours watching plants grow.")
-          nil
-          (make-list 1 "tries to keep away from crowds.")
-          nil
-          (make-list 1 "follows omens to determine daily actions.")
-          nil
-          (nature-quirk)
-          nil
-          (nature-quirk)
-          nil
-          (nature-quirk)
-          nil
-          (nature-quirk)
-          nil
-          (nature-quirk)
-          nil
-          )
-   )  
-  )
-

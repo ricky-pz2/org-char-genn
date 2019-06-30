@@ -1,3 +1,5 @@
+;; Verified, all return string
+
 (defun contest
     ()
   (seq-random-elt
@@ -61,7 +63,7 @@
 (defun worship
     ()
   (seq-random-elt
-   (apply 'apppend
+   (apply 'append
           (make-list 7 "discretely")
           nil
           (make-list 4 "quietly")
@@ -75,6 +77,7 @@
           (make-list 1 "zealously")
           nil
           (make-list 1 "fervently")
+          nil
           )
    )
   )

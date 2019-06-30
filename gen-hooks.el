@@ -1,3 +1,5 @@
+;; Verified, returns strings
+
 (load "gen-other")
 (load "gen-items")
 (load "gen-other")
@@ -19,211 +21,43 @@
           nil
           (make-list 2 "house was recently destroyed by a mysterious tornado.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help finding a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help finding a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help finding a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help finding a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help finding a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help finding a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby house.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby house."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby house.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby house."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby commerce.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby house."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby commerce.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby commerce."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby commerce.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby commerce."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby commerce.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby commerce."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby castle.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby castle."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help stealing a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "from a nearby castle.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help stealing a " (precious-item) " from a nearby castle."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "seeks revenge for the death of their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "seeks revenge for the death of their  " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "seeks revenge for the death of their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "seeks revenge for the death of their  " (relationship)))
           nil
           (make-list 2 "needs help fighting a rebellious organization who wants to take control of the governement.")
           nil
@@ -233,117 +67,21 @@
           nil
           (make-list 2 "is part of a secret rebellious organization who wants to take control of the clergy.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to their " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to their " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to their " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to their " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to the local " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to the local " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to the local " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a")
-                            nil
-                            (precious-item)
-                            nil
-                            (make-list 1 "to the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a " (precious-item) " to the local " (organization)))
           nil
           (make-list 2 "is obsessed with a nearby cavern with amazing waterfalls.")
           nil
@@ -355,85 +93,21 @@
           nil
           (make-list 2 "is obsessed with a nearby tavern with absolutely incredible ale.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is spying the players on behalf of an organization of")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is spying the players on behalf of an organization of " (race-allergy)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is spying the players on behalf of an organization of")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is spying the players on behalf of an organization of " (race-allergy)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is spying the players on behalf of the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is spying the players on behalf of the local  " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is spying the players on behalf of the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is spying the players on behalf of the local  " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help gathering information on an organization of")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help gathering information on an organization of   " (race-allergy)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help gathering information on an organization of")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help gathering information on an organization of   " (race-allergy)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help gathering information on the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help gathering information on the local   " (organization)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help gathering information on the local")
-                            nil
-                            (organization)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help gathering information on the local   " (organization)))
           nil
           (make-list 3 "has a duel to the death on the morrow but they are afraid to lose it.")
           nil
@@ -441,113 +115,27 @@
           nil
           (make-list 3 "is being blackmailed into challenging a PC to a duel to the death.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently come into possession of a powerful magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ", and nobody knows how.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently come into possesion of a powerful magical " (precious) ", and nobody knows how."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently come into possession of a powerful magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ", and nobody knows how.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently come into possesion of a powerful magical " (precious) ", and nobody knows how."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently come into possession of a powerful magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ", and nobody knows how.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently come into possesion of a powerful magical " (precious) ", and nobody knows how."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently woken up with a magical rune on their")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently woken up with a magical rune on their " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently woken up with a magical rune on their")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently woken up with a magical rune on their " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has recently woken up with a magical rune on their")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has recently woken up with a magical rune on their " (body-part)))
           nil
           (make-list 2 "is being haunted by a ghost.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is being haunted by the ghost of their dead")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is beng haunted by the ghost of their dead  " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is being haunted by the ghost of their dead")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is beng haunted by the ghost of their dead  " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "was tricked into wearing a cursed")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "was tricked into wearing a cursed  " (precious)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "was tricked into wearing a cursed")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "was tricked into wearing a cursed  " (precious)))
           nil
           (make-list 1 "has discovered a secret passage under their house leading to a mysterious cave.")
           nil
@@ -563,101 +151,21 @@
           nil
           (make-list 1 "is the head of an international drug dealing circle.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is organizing a")
-                            nil
-                            (contest)
-                            nil
-                            (make-list 1 ". The price will be a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is organizing a " (contest) ". The price will be a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is organizing a")
-                            nil
-                            (contest)
-                            nil
-                            (make-list 1 ". The price will be a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is organizing a " (contest) ". The price will be a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is organizing a")
-                            nil
-                            (contest)
-                            nil
-                            (make-list 1 ". The price will be a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is organizing a " (contest) ". The price will be a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is organizing a")
-                            nil
-                            (contest)
-                            nil
-                            (make-list 1 ". The price will be a")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is organizing a " (contest) ". The price will be a " (precious-item)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help organizing a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help organizing a " (contest)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help organizing a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help organizing a " (contest)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help organizing a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help organizing a " (contest)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help organizing a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help organizing a " (contest)))
           nil
           (make-list 2 "is possessed by an evil spirit who makes them do horrible things at night, without remembering them.")
           nil
@@ -681,213 +189,49 @@
           nil
           (make-list 2 "home has been infested by zombies.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help exorcising their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help exorcising their  " (relationship)))          
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help exorcising their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help exorcising their  " (relationship)))          
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help exorcising their")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help exorcising their  " (relationship)))          
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is in dire need of some")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "blood.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is in dire need of some " (a-monster) " blood."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is in dire need of some")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "blood.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is in dire need of some " (a-monster) " blood."))
           nil
           (make-list 2 "house has been eaten by a purple worm. Further inspection of the tunnel reveals a complex cave system.")
           nil
           (make-list 2 "house has been eaten by a purple worm. Further inspection of the tunnel reveals an ancient catacomb.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "wants the PCs to help them kill")
-                            nil
-                            (a-monster)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "wants the PCs to help them kill " (a-monster)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "wants the PCs to help them kill")
-                            nil
-                            (a-monster)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "wants the PCs to help them kill " (a-monster)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has learned of the existence of a shrine to")
-                            nil
-                            (arch-devil)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has learned of the existance of a shrine to " (arch-devil)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has learned of the existence of a shrine to")
-                            nil
-                            (arch-devil)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has learned of the existance of a shrine to " (arch-devil)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has learned of the existence of a shrine to")
-                            nil
-                            (arch-devil)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has learned of the existance of a shrine to " (arch-devil)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has angered")
-                            nil
-                            (arch-devil)
-                            nil
-                            (make-list 1 "and needs help avoiding the consequences.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has angered " (arch-devil) " and needs help avoiding the consequences."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has angered")
-                            nil
-                            (arch-devil)
-                            nil
-                            (make-list 1 "and needs help avoiding the consequences.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has angered " (arch-devil) " and needs help avoiding the consequences."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has angered")
-                            nil
-                            (arch-devil)
-                            nil
-                            (make-list 1 "and needs help avoiding the consequences.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has angered " (arch-devil) " and needs help avoiding the consequences."))
           nil
           (make-list 3 "is a fountain of wild magic and cannot control it.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "gives the PCs a magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ". Turns out they had stolen it from a wizard who is hellbent on recovering it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "gives the PCs a magical " (precious) ". Turns out they had stolen it from a wizard who is hellbent on recovering it."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "gives the PCs a magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ". Turns out they had stolen it from a wizard who is hellbent on recovering it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "gives the PCs a magical " (precious) ". Turns out they had stolen it from a wizard who is hellbent on recovering it."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "gives the PCs a magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ". Turns out they had stolen it from a wizard who is hellbent on recovering it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "gives the PCs a magical " (precious) ". Turns out they had stolen it from a wizard who is hellbent on recovering it."))
           nil
           (make-list 2 "is secretly a vampire.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "carrise around a large")
-                            nil
-                            (color)
-                            nil
-                            (make-list 1 "egg of unknown origin.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "carries around a large " (color) " egg of unkown origin."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "carrise around a large")
-                            nil
-                            (color)
-                            nil
-                            (make-list 1 "egg of unknown origin.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "carries around a large " (color) " egg of unkown origin."))
           nil
           )
    )
@@ -897,115 +241,27 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (relationship)
-                            nil
-                            (make-list 1 ", who never actually existed")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship) ", who never actually exsted."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is looking for their lost")
-                            nil
-                            (relationship)
-                            nil
-                            (make-list 1 ", who never actually existed")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is looking for their lost " (relationship) ", who never actually exsted."))
           nil
           (make-list 2 "has recently obtained a fake map to a great treasure.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "seeks revenge for the death of")
-                            nil
-                            (relationship)
-                            nil
-                            (make-list 1 ", who never actually existed")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "seeks revenge for the death of " (relationship) ", who never actually exsted."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "seeks revenge for the death of")
-                            nil
-                            (relationship)
-                            nil
-                            (make-list 1 ", who never actually existed")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "seeks revenge for the death of " (relationship) ", who never actually exsted."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a tamed")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "to a local wizard.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local wizard."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a tamed")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "to a local wizard.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local wizard."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a tamed")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "to a local zoo.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local zoo."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a tamed")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "to a local circus.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local zoo."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs the party to deliver a tamed")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "to a local museum.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local circus."))
+          nil
+          (list (concat "needs the party to deliver a tamed " (a-monster) ", to a local museum."))
           nil
           (make-list 1 "is followed day and night by a personality speaking crow.")
           nil
@@ -1015,47 +271,15 @@
           nil
           (make-list 1 "is followed day and night by a personality speaking cat.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is followed day and night by an animated")
-                            nil
-                            (furniture)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is followed day and night by an animated " (furniture)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is followed day and night by an animated")
-                            nil
-                            (furniture)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is followed day and night by an animated " (furniture)))
           nil
           (make-list 2 "has been cursed into speaking only gibberish.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is willingly wearing a cursed")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is willingly wearing a cursed " (precious)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is willingly wearing a cursed")
-                            nil
-                            (precious)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is willingly wearing a cursed " (precious)))
           nil
           (make-list 2 "has been hexed into constantly hallucinating.")
           nil
@@ -1069,117 +293,25 @@
           nil
           (make-list 3 "is being constantly psychologically tortured by a crazed leprechaun.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs help sabotaging a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help sabotaging a " (contest)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "needs hely sabotaging a")
-                            nil
-                            (contest)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "needs help sabotaging a " (contest)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and tries to convince the PCs to let them change them as well.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and tries to convince the PCs to let them change them as well."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and tries to convince the PCs to let them change them as well.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and tries to convince the PCs to let them change them as well."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and wants to get rid of it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and wants to get rid of it."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and wants to get rid of it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and wants to get rid of it."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and is looking for acceptance within society.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and is looking for acceptance within society."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is a were")
-                            nil
-                            (were-beast)
-                            nil
-                            (make-list 1 "and is looking for acceptance within society.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is a were" (were-beast) "and is looking for acceptance within society."))
           nil
           (make-list 3 "approaches the PC by falling from the sky. They have a 50% chance of surviving the landing.")
           nil
@@ -1221,103 +353,25 @@
           nil
           (make-list 2 "is a secret vigilante, and considers the PCs a threat to society.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is addicted to")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "blood.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is addicted to " (a-monster) " blood."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is addicted to")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "blood.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is addicted to " (a-monster) " blood."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is addicted to")
-                            nil
-                            (a-monster)
-                            nil
-                            (make-list 1 "blood.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is addicted to " (a-monster) " blood."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "wants  the PCs to help them tame")
-                            nil
-                            (a-monster)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "wants the PCs to help them tame " (a-monster)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "wants  the PCs to help them tame")
-                            nil
-                            (a-monster)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "wants the PCs to help them tame " (a-monster)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "wants  the PCs to help them tame")
-                            nil
-                            (a-monster)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "wants the PCs to help them tame " (a-monster)))
           nil
           (make-list 3 "is being stalked by a gibbering mouth at night")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually an Oni posing as a")
-                            nil
-                            (race)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually an Oni posing as a " (race)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually an Oni posing as a")
-                            nil
-                            (race)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually an Oni posing as a " (race)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually an Oni posing as a")
-                            nil
-                            (race)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually an Oni posing as a " (race)))
           nil
           (make-list 2 "has fallen in love with a dryad from a local forest.")
           nil
@@ -1347,67 +401,17 @@
           nil
           (make-list 1 "talks very fast and incomprehensibly to the NPCs before turning to dust.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually a")
-                            nil
-                            (dragons)
-                            nil
-                            (make-list 1 "dragon.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually a " (dragons) "dragon."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually a")
-                            nil
-                            (dragons)
-                            nil
-                            (make-list 1 "dragon.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually a " (dragons) "dragon."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is actually a")
-                            nil
-                            (dragons)
-                            nil
-                            (make-list 1 "dragon.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is actually a " (dragons) "dragon."))
           nil
           (make-list 2 "has recently come into possession of an unreasonable amount of fish, and it's not clear why.")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "gives the PCs a magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ". Turns out they had stolen it from an imp whos is hellbent on recovening it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "gives the PCs a magical " (precious) ". Turns out they had stolen it from an imp who is hellbent on recovering it."))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "gives the PCs a magical")
-                            nil
-                            (precious)
-                            nil
-                            (make-list 1 ". Turns out they had stolen it from an imp whos is hellbent on recovening it.")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "gives the PCs a magical " (precious) ". Turns out they had stolen it from an imp who is hellbent on recovering it."))
           nil
           (make-list 2 "is a time traveller from a distant past.")
           nil
@@ -1430,19 +434,13 @@
 (defun hooks
     ()
   (seq-random-elt
-   (apply 'append
-          (hooks-1)
-          nil
-          (hooks-1)
-          nil
-          (hooks-1)
-          nil
-          (hooks-1)
-          nil
-          (hooks-2)
-          nil
-          (hooks-2)
-          nil
-          )
+   (list
+    (hooks-1)
+    (hooks-1)
+    (hooks-1)
+    (hooks-1)
+    (hooks-2)
+    (hooks-2)
+    )
    )
   )

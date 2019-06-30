@@ -1,3 +1,5 @@
+;; verified, all functions return int
+
 (defun coin
     ()
   (seq-random-elt (number-sequence 1 2)
@@ -42,5 +44,5 @@
 
 (defun d100
     ()
-  (+ (* (d10) 10) (d10))
+  (seq-random-elt (number-sequence 1 100))
   )

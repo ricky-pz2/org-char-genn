@@ -1,3 +1,5 @@
+;; Verified, all return a string
+
 (defun mod-gen
     ()
   (seq-random-elt

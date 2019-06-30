@@ -1,6 +1,8 @@
+;; Verified, return strings
+
 (load "gen-basic-dnd")
 (load "gen-other")
-(load "gen-allergy")
+(load "gen-races")
 (load "gen-creatures")
 (load "gen-items")
 
@@ -1258,7 +1260,7 @@
           nil
           (make-list 2 "purple")
           nil
-          (human-skin)
+          (list (human-skin))
           nil
           )
    )
@@ -1268,59 +1270,76 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (beard-length)
-                            nil
-                            (beard-shape)
-                            nil
-                            )
-                     " "
-                     )
-          (mapconcat 'identity
-                     (apply 'append
-                            (beard-length)
-                            nil
-                            (beard-shape)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (beard-length) " "(beard-shape)))
+          nil
+          (list (concat (beard-length) " "(beard-shape)))
+          nil
           (make-list 3 "")
+          nil
           )
    )
   )
 
 (defun dragon-skin
     ()
-  (apply 'append
-         (mapconcat 'identity
-                    (apply 'append
-                           (dragons)
-                           nil
-                           (scale-texture)
-                           nil
-                           (make-list 1 "scales")
-                           nil)
-                    " ")
-         )
+  (concat (dragons) " " (scale-texture) " scales")
+  )
+
+(defun head
+    ()
+  (seq-random-elt
+   (apply 'append
+          (make-list 2 "lip")
+          nil
+          (list (concat (rl) " cheek"))
+          nil
+          (make-list 1 "forehead")
+          nil
+          (make-list 2 "nose")
+          nil
+          (list (concat (rl) " eyebrow"))
+          nil
+          (list (concat (rl) " eyebrow"))
+          nil
+          (list (concat (rl) " eyebrow"))
+          nil
+          (list (concat (rl) " ear"))
+          nil
+          (list (concat (rl) " ear"))
+          nil
+          (list (concat (rl) " ear"))
+          nil
+          (list (concat (rl) " ear"))
+          nil
+          (list (concat (rl) " ear"))
+          nil
+          )
+   )
+  )
+
+(defun body-part-head
+    ()
+  (seq-random-elt
+   (apply 'append
+          (make-list 1 "neck")
+          nil
+          (make-list 1 "chest")
+          nil
+          (list (head))
+          nil
+          (make-list 1 "back")
+          nil
+          )
+   )
   )
 
 (defun body-part
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity 
-                     (apply 'append
-                            (rl) 
-                            nil
-                            (body-part-extremity)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (rl) " " (body-part-extremity)))
           nil
-          (body-part-head)
+          (list (body-part-head))
           nil
           )
    )
@@ -1330,43 +1349,15 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (body-part-extremity)
-                            nil
-                            )
-                     " ")
+          (list (concat (rl) " " (body-part-extremity)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (body-part-extremity)
-                            nil
-                            )
-                     " ")
+          (list (concat (rl) " " (body-part-extremity)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (body-part-extremity)
-                            nil
-                            )
-                     " ")
+          (list (concat (rl) " " (body-part-extremity)))
           nil
-          (body-part-head)
+          (list (body-part-head))
           nil
           )
-   )
-  )
-
-(defun height
-    ()
-  (seq-random-elt
-   (number-sequence 60 90)
    )
   )
 
@@ -1374,321 +1365,51 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (size) " scar on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (size) " scar on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (size) " scar on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (size) " scar on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            (make-list 1 "and")
-                            nil
-                            (size)
-                            nil
-                            (make-list 1 "scar on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (size) " scar on " (body-part) " and " (size) " scar on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "piercing on")
-                            nil
-                            (head)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " piercing on " (head)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "piercing on")
-                            nil
-                            (head)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " piercing on " (head)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "piercing on")
-                            nil
-                            (head)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " piercing on " (head)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "piercing on")
-                            nil
-                            (head)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " piercing on " (head)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (degree)
-                            nil
-                            (make-list 1 "limp")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (degree) " limp"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (degree)
-                            nil
-                            (make-list 1 "hunch")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (degree) " hunch"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (degree)
-                            nil
-                            (make-list 1 "hunch")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (degree) " hunch"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (degree)
-                            nil
-                            (make-list 1 "hunch")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (degree) " hunch"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "tattoo on")
-                            nil
-                            (body-part-tat)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " tattoo on " (body-part-tat)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (a-tattoo-adj)
-                            nil
-                            (make-list 1 "tattoo on")
-                            nil
-                            (body-part-tat)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (a-tattoo-adj) " tattoo on " (body-part-tat)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is branded as a")
-                            nil
-                            (brand)
-                            nil
-                            (make-list 1 "on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is branded as a " (brand) " on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is branded as a")
-                            nil
-                            (brand)
-                            nil
-                            (make-list 1 "on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is branded as a " (brand) " on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is branded as a")
-                            nil
-                            (brand)
-                            nil
-                            (make-list 1 "on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is branded as a " (brand) " on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is branded as a")
-                            nil
-                            (brand)
-                            nil
-                            (make-list 1 "on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is branded as a " (brand) " on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is branded as a")
-                            nil
-                            (brand)
-                            nil
-                            (make-list 1 "on")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is branded as a " (brand) " on " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "smells")
-                            nil
-                            (degree-2)
-                            nil
-                            (bad-smell)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "smells " (degree-2) " " (bad-smell)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "smells")
-                            nil
-                            (degree-2)
-                            nil
-                            (good-smell)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "smells " (degree-2) " " (bad-smell)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "smells")
-                            nil
-                            (degree-2)
-                            nil
-                            (good-smell)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "smells " (degree-2) " " (bad-smell)))
           nil
           (make-list 1 "is very nimble")
           nil
@@ -1714,133 +1435,27 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "twitches")
-                            nil
-                            (frequency)
-                            nil
-                            (make-list 1 "from")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "twitches " (frequency) " from " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "twitches")
-                            nil
-                            (frequency)
-                            nil
-                            (make-list 1 "from")
-                            nil
-                            (body-part)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "twitches " (frequency) " from " (body-part)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "fidgets")
-                            nil
-                            (frequency)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "fidgets " (frequency)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "fidgets")
-                            nil
-                            (frequency)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "fidgets " (frequency)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "smokes the pipe")
-                            nil
-                            (frequency)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "somkes the pipe " (frequency)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "smokes the pipe")
-                            nil
-                            (frequency)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "somkes the pipe " (frequency)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "bow-legged")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " bow-legged"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is missing")
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is missing " (rl) " ear"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is deaf from")
-                            nil
-                            (rlb)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is deaf from " (rlb) " ear"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (missing-fingers)
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "hand")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (missing-fingers) " " (rl) " hand"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (missing-eye)
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "eye")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (missing-eye) " " (rl) " eye"))
           nil
           (make-list 1 "is blind")
           nil
@@ -1848,409 +1463,35 @@
           nil
           (make-list 1 "rolls Rs profusely")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "squints")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " squints"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (frequency)
-                            nil
-                            (make-list 1 "squints")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (frequency) " squints"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is missing")
-                            nil
-                            (rl)
-                            nil
-                            (missing-limb)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is missing " (missing-limb)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "colorblind")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " colorblnd"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "cross-eyed")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (mod-gen) " cross-eyed"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "webbed fingers")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (mod-gen) " webbed fingers"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "long nails")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (mod-gen) " long nails"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "has")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 "long fingers")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "has " (mod-gen) " long fingers"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (extra-finger)
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "hand")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (extra-finger) " " (rl) " hand"))
           nil
           (make-list 1 "can't feel pain")
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (degree-2)
-                            nil
-                            (make-list 1 "allergic to")
-                            nil
-                            (aliment-list)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (degree-2) " allergic to " (aliment-list)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (degree-2)
-                            nil
-                            (make-list 1 "allergic to")
-                            nil
-                            (aliment-list)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (degree-2) " allergic to " (aliment-list)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (degree-2)
-                            nil
-                            (make-list 1 "allergic to")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (degree-2) " allergic to " (aliment-list)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is")
-                            nil
-                            (degree-2)
-                            nil
-                            (make-list 1 "allergic to")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "is " (degree-2) " allergic to " (aliment-list)))
           nil
           (make-list 1 "is albino")
-          nil
-          )
-   )
-  )
-
-(defun tabaxi-obsession
-    ()
-  (seq-random-elt
-   (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (monster-1)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (race-allergy)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by")
-                            nil
-                            (precious-item)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 2 "is currently obsessed by the current town.")
-          nil
-          (make-list 2 "is currently obsessed by a nearby house.")
-          nil
-          (make-list 2 "is currently obsessed by the nearest castle.")
-          nil
-          (make-list 2 "is currently obsessed by a nearby cave.")
-          nil
-          (make-list 2 "is currently obsessed by a forgotten legend.")
-          nil
-          (make-list 2 "is currently obsessed by a local legend.")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a song about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a song about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a song about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a book about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a book about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "is currently obsessed by a book about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
           nil
           )
    )
@@ -2260,547 +1501,85 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the inspirational quote about " (abstract-word)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the word")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the word " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of a poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of a poem about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the poem about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of a inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of a inspirational quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of a inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of a inspirational quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of a inspirational quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "translated into")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of a inspirational quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "written in")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "written in")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the lyrics of a song quote about")
-                            nil
-                            (abstract-word)
-                            nil
-                            (make-list 1 "written in")
-                            nil
-                            (language)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the name of")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the lyrics of a song quote about " (abstract-word) " translated into " (language)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the name of")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the name of " (relationship)))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (make-list 1 "tattoo of the name of")
-                            nil
-                            (relationship)
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the name of " (relationship)))
           nil
-          )
-   )
-  )
-
-(defun head
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 2 "lip")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "cheek")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (make-list 1 "forehead")
-          nil
-          (make-list 2 "nose")
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "eyebrow")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "eyebrow")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "eyebrow")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (rl)
-                            nil
-                            (make-list 1 "ear")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat "tattoo of the name of " (relationship)))
           nil
           )
    )
@@ -2810,487 +1589,141 @@
     ()
   (seq-random-elt
    (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (good-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (good-looking)
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-face-mod)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (bad-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (bad-looking)
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (mod-gen)
-                            nil
-                            (make-list 1 " ")
-                            nil
-                            (normal-looking)
-                            nil
-                            )
-                     " "
-                     )
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          (normal-looking)
-          nil
-          )
-   )
-  )
-
-(defun body-part-head
-    ()
-  (seq-random-elt
-   (apply 'append
-          (make-list 1 "neck")
-          nil
-          (make-list 1 "chest")
-          nil
-          (head)
-          nil
-          (make-list 1 "back")
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (good-looking))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (bad-looking))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
+          nil
+          (list (normal-looking))
           nil
           )
    )
@@ -3298,769 +1731,96 @@
 
 (defun hair
     ()
-  (seq-random-elt)
-  (apply 'append
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+  (seq-random-elt
+   (apply 'append
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair "))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair shaved on")
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "side")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair shaved on " (rl) " side"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair shaved on")
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "side")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair shaved on " (rl) " side"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair shaved on")
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "side")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair shaved on " (rl) " side"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-type)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "hair shaved on")
-                            nil
-                            (rl)
-                            nil
-                            (make-list 1 "side")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair shaved on " (rl) " side"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "mohawk")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-type) ", " (hair-color) " hair shaved on " (rl) " side"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "mohawk")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-color) " mohawk"))
           nil
-          (mapconcat 'identity
-                     (apply 'append
-                            (hair-length)
-                            nil
-                            (make-list 1 ", ")
-                            nil
-                            (hair-color)
-                            nil
-                            (make-list 1 "mohawk")
-                            nil
-                            )
-                     " "
-                     )
+          (list (concat (hair-length) ", " (hair-color) " mohawk"))
+          nil
+          (list (concat (hair-length) ", " (hair-color) " mohawk"))
           nil
           (make-list 8 "a bald head")
           nil
           )
+   )
   )
