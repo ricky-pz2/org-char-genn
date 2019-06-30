@@ -11,8 +11,8 @@
 (load "gen-races")
 (load "gen-dice")
 
-(defvar *gender* (list "M" "F"))
-(defvar *race*
+(defvar *chargender* (list "M" "F"))
+(defvar *charrace*
   (apply 'append
          (make-list 4 "Dragonborn")
          nil
@@ -34,8 +34,9 @@
          nil
          )
   )
-(defvar *chargender* nil)
-(defvar *charrace* nil)
+
+(defvar *gender* nil)
+(defvar *race* nil)
 (defvar *name* nil)
 (defvar *age* nil)
 (defvar *occupation* nil)
@@ -63,34 +64,24 @@
 
 (defun dragonborn-race
     (gender)
-  (setf *name* (mapconcat 'identity (dragon-born-name) " "))
+  (setf *name* (dragon-born-name))
   (setf *age* (seq-random-elt (number-sequence 16 80)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (dragon-hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (dragon-skin) nil (make-list 1 "skin") " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (dragon-hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (concat (dragon-skin) " skin"))
   (setf *height* (seq-random-elt (number-sequence 68 82)))
-  (setf *build* (mapconcat 'identity (strong-weight) " "))
-  (setf *face*
-        (mapconcat 'identity
-                   (apply 'append
-                          (face-shape)
-                          nil
-                          (attractiveness)
-                          nil
-                          )
-                   " "
-                   )
-        )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (dragon-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (dragon-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *build* (strong-weight))
+  (setf *face* (concat (face-shape) " " (attractiveness)))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (dragon-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (dragon-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
@@ -101,129 +92,68 @@
 
 (defun dwarf-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-dwarf-name)
-                              nil
-                              (dwarf-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-dwarf-name)
-                            nil
-                            (dwarf-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-dwarf-name) " " (dwarf-surname))
+          (concat (female-dwarf-name) " " (dwarf-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 50 350)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (human-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (human-skin))
   (setf *height* (seq-random-elt (number-sequence 46 54)))
-  (setf *build* (mapconcat 'identity (strong-weight) " "))
+  (setf *build* (strong-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (dwarf-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (dwarf-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (dwarf-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (dwarf-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+  )        
 
 (defun elf-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-elf-name)
-                              nil
-                              (elf-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-elf-name)
-                            nil
-                            (elf-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-elf-name) " " (elf-surname))
+          (concat (female-elf-name) " " (elf-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 16 750)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (elf-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (elf-skin))
   (setf *height* (seq-random-elt (number-sequence 55 74)))
   (setf *build* (mapconcat 'identity (light-weight) " "))
   (setf *face*
-        (mapconcat 'identity
-                   (apply 'append
-                          (face-shape)
-                          nil
-                          (attractiveness)
-                          nil
-                          )
-                   " "
-                   )
-        )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (religion-select) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (elf-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+        (concat (face-shape) " " (attractiveness)))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (religion-select))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (elf-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
@@ -234,426 +164,226 @@
 
 (defun gnome-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-gnome-name)
-                              nil
-                              (human-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-gnome-name)
-                            nil
-                            (humman-surname)
-                            nil
-                            )
-                     " "
-                     )
-          )
-        )
+            (concat (male-gnome-name) " " (human-surname))
+          (concat (female-gnome-name) " " (human-surname))
+         )
+       )
   (setf *age* (seq-random-elt (number-sequence 16 500)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (nonhuman-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (nonhuman-skin))
   (setf *height* (seq-random-elt (number-sequence 37 43)))
-  (setf *build* (mapconcat 'identity (weight) " "))
+  (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
-          )
-        )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (gnome-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (gnome-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
+         )
+       )
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (gnome-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (gnome-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun halfling-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-halfing-name)
-                              nil
-                              (halfing-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-halfing-name)
-                            nil
-                            (halfing-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-halfing-name) " " (halfling-surname))
+          (concat (female-halfing-name) " " (halfling-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 16 160)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (nonhuman-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (nonhuman-skin))
   (setf *height* (seq-random-elt (number-sequence 33 39)))
-  (setf *build* (mapconcat 'identity (weight) " "))
+  (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (halfing-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (half-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (halfing-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (half-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun half-elf-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-human-name)
-                              nil
-                              (elf-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-human-name)
-                            nil
-                            (elf-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-human-name) " " (elf-surname))
+          (concat (female-human-name) " " (elf-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 16 160)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (elf-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (elf-skin))
   (setf *height* (seq-random-elt (number-sequence 58 78)))
-  (setf *build* (mapconcat 'identity (weight) " "))
+  (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (human-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (random-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (human-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (random-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun half-orc-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-orc-name)
-                              nil
-                              (elf-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-orc-name)
-                            nil
-                            (elf-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-orc-name) " " (human-surname))
+          (concat (female-orc-name) " " (human-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 16 75)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (human-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (human-skin))
   (setf *height* (seq-random-elt (number-sequence 60 78)))
-  (setf *build* (mapconcat 'identity (strong-weight) " "))
+  (setf *build* (strong-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (human-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (random-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (human-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (random-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun human-race
     (gender)
-  (setf *face*
+  (setf *name*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (male-human-name)
-                              nil
-                              (human-surname)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (female-human-name)
-                            nil
-                            (human-surname)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (male-human-name) " " (human-surname))
+          (concat (female-human-name) " " (human-surname))
           )
         )
   (setf *age* (seq-random-elt (number-sequence 16 80)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (human-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (human-skin))
   (setf *height* (seq-random-elt (number-sequence 58 78)))
-  (setf *build* (mapconcat 'identity (weight) " "))
+  (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (human-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (random-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (human-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (random-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun tiefling-race
     (gender)
-  (setf *name* (format "%s" (tiefling-name)))
+  (setf *name* (tiefling-name))
   (setf *age* (seq-random-elt (number-sequence 16 90)))
-  (setf *occupation* (mapconcat 'identity (occupation) " "))
-  (setf *hair* (mapconcat 'identity (hair) " "))
-  (setf *eyes* (mapconcat 'identity (eye-color) " "))
-  (setf *skin* (mapconcat 'identity (tiefling-skin) " "))
+  (setf *occupation* (occupation))
+  (setf *hair* (hair))
+  (setf *eyes* (eye-color))
+  (setf *skin* (tiefling-skin))
   (setf *height* (seq-random-elt (number-sequence 59 73)))
-  (setf *build* (mapconcat 'identity (light-weight) " "))
+  (setf *build* (light-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (mapconcat 'identity
-                       (apply 'append
-                              (face-shape)
-                              nil
-                              (attractiveness)
-                              nil
-                              (make-list 1 "face")
-                              nil
-                              (beard)
-                              nil
-                              )
-                       " "
-                       )
-          (mapconcat 'identity
-                     (apply 'append
-                            (face-shape)
-                            nil
-                            (attractiveness)
-                            nil
-                            )
-                     " "
-                     )
+            (concat (face-shape) " " (attractiveness) "face " (beard))
+          (concat (face-shape) " " (attractiveness))
           )
         )
-  (setf *special1* (mapconcat 'identity (special-physical-1) " "))
-  (setf *special2* (mapconcat 'identity (special-physical-2) " "))
-  (setf *orientation* (mapconcat 'identity (orientation) " "))
-  (setf *relationstatus* (mapconcat 'identity (relationship-status) " "))
-  (setf *religion* (mapconcat 'identity (human-god) " "))
-  (setf *trait1* (mapconcat 'identity (random-traits-1) " "))
-  (setf *trait2* (mapconcat 'identity (random-traits-2) " "))
-  (setf *quirk* (mapconcat 'identity (random-quirks) " "))
-  (setf *hook* (mapconcat 'identity (hooks) " "))
+  (setf *special1* (special-physical-1))
+  (setf *special2* (special-physical-2))
+  (setf *orientation* (orientation))
+  (setf *relationstatus* (relationship-status))
+  (setf *religion* (human-god))
+  (setf *trait1* (random-traits-1))
+  (setf *trait2* (random-traits-2))
+  (setf *quirk* (random-quirks))
+  (setf *hook* (hooks))
   (setf *str* (+ (d6) (d6) (d6)))
   (setf *dex* (+ (d6) (d6) (d6)))
   (setf *con* (+ (d6) (d6) (d6)))
   (setf *int* (+ (d6) (d6) (d6)))
   (setf *wis* (+ (d6) (d6) (d6)))
   (setf *cha* (+ (d6) (d6) (d6)))
-  )
+ )
 
 (defun npc-generate
     (&optional gender race)
@@ -666,13 +396,13 @@
   (setf *race* nil)
   (if (string-equal gender nil)
       (setf *gender*
-                       (seq-random-elt *gender*)
+            (seq-random-elt *chargender*)
             )
     (setf *gender* gender))
   ;; set race
   (if (string-equal race nil)
       (setf *race*
-                       (seq-random-elt *race*)
+            (seq-random-elt *charrace*)
             )
     (setf *race* race)
     )
@@ -697,263 +427,33 @@
       (tiefling-race *gender*)
     )
   ;; Write Stats to screen
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":NAME:")
-                     nil
-                     (*name*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":RACE:")
-                     nil
-                     (*race*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":SEX:")
-                     nil
-                     (*gender*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":AGE:")
-                     nil
-                     (*age*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":OCCUPATION:")
-                     nil
-                     (*occupation*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":FACE:")
-                     nil
-                     (*face*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":HAIR:")
-                     nil
-                     (*hair*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":SKIN:")
-                     nil
-                     (*skin*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":EYES:")
-                     nil
-                     (*eyes*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":HEIGHT:")
-                     nil
-                     (*height*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":BUILD:")
-                     nil
-                     (*build*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":PERSONALITY:")
-                     nil
-                     (*special1*)
-                     nil
-                     (*special2*)
-                     nil
-                     (*trait1*)
-                     nil
-                     (*trait2*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":SORIENTATION:")
-                     nil
-                     (*orientation*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":RELATIONSHIP:")
-                     nil
-                     (*relationstatus*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":RELIGION:")
-                     nil
-                     (*relationstatus*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":QUIRK:")
-                     nil
-                     (*quirk*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":HOOK:")
-                     nil
-                     (*hook*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":STRENGTH:")
-                     nil
-                     (*str*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":DEXTERITY:")
-                     nil
-                     (*dex*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":CONSTITUTION:")
-                     nil
-                     (*con*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":INTELLIGENCE:")
-                     nil
-                     (*int*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":WISDOM:")
-                     nil
-                     (*wis*)
-                     nil
-                     )
-              " "
-              )
-   )
-  (insert
-   (mapconcat 'identity
-              (apply 'append
-                     (make-list 1 ":CHARISMA:")
-                     nil
-                     (*cha*)
-                     nil
-                     )
-              " "
-              )
-   )
+  (insert (concat ":NAME: " *name* "\n"))
+  (insert (concat ":RACE: " *race* "\n"))
+  (insert (concat ":SEX: " *gender* "\n"))
+  (insert (concat ":AGE: " (number-to-string *age*) "\n"))
+  (insert (concat ":OCCUPATION: "  *occupation* "\n"))
+  (insert (concat ":FACE: " *face* "\n"))
+  (insert (concat ":HAIR: " *hair* "\n"))
+  (insert (concat ":SKIN: " *skin* "\n"))
+  (insert (concat ":EYES: " *eyes* "\n"))
+  (insert (concat ":HEIGHT: " (number-to-string *height*) "\n"))
+  (insert (concat ":BUILD: " *build* "\n"))
+  (insert (concat ":PERSONALITY: "
+                  *special1* "\n "
+                  *special2* "\n "
+                  *trait1* "\n"
+                  *trait2* "\n"
+                  )
+          )
+  (insert (concat ":SORIENTATION: " *orientation* "\n"))
+  (insert (concat ":RELATIONSHIP: " *relationstatus* "\n"))
+  (insert (concat ":RELIGION: " *religion* "\n"))
+  (insert (concat ":QUIRK: " *quirk* "\n"))
+  (insert (concat ":HOOK: " *hook* "\n"))
+  (insert (concat ":STR: " (number-to-string *str*) "\n"))
+  (insert (concat ":DEX: " (number-to-string *dex*) "\n"))
+  (insert (concat ":CON: " (number-to-string *con*) "\n"))
+  (insert (concat ":INT: " (number-to-string *int*) "\n"))
+  (insert (concat ":WIS: " (number-to-string *wis*) "\n"))
+  (insert (concat ":CHA: " (number-to-string *cha*) "\n"))
   )
