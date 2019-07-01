@@ -142,7 +142,7 @@
   (setf *eyes* (eye-color))
   (setf *skin* (elf-skin))
   (setf *height* (seq-random-elt (number-sequence 55 74)))
-  (setf *build* (mapconcat 'identity (light-weight) " "))
+  (setf *build* (light-weight))
   (setf *face*
         (concat (face-shape) " " (attractiveness)))
   (setf *special1* (special-physical-1))
