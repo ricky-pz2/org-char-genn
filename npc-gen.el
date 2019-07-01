@@ -385,6 +385,11 @@
   (setf *cha* (+ (d6) (d6) (d6)))
  )
 
+(defun inches-to-feet
+    (inches)
+  (concat (number-to-string (/ inches 12)) "\" " (number-to-string (mod inches 12)) "'")
+  )
+
 (defun npc-generate
     (&optional gender race)
   "Creates an npc with an specified Gender or Race.
@@ -392,6 +397,7 @@
    Race can be Dragonborn, Dwarf, Elf, Gnome, Halfling,
    Half-elf, Half-orc, Human, Tiefling.
    "
+  (interactive)
   (setf *gender* nil)
   (setf *race* nil)
   (if (string-equal gender nil)
@@ -436,7 +442,7 @@
   (insert (concat ":HAIR: " *hair* "\n"))
   (insert (concat ":SKIN: " *skin* "\n"))
   (insert (concat ":EYES: " *eyes* "\n"))
-  (insert (concat ":HEIGHT: " (number-to-string *height*) "\n"))
+  (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
   (insert (concat ":BUILD: " *build* "\n"))
   (insert (concat ":PERSONALITY: "
                   *special1* "\n "
@@ -445,7 +451,7 @@
                   *trait2* "\n"
                   )
           )
-  (insert (concat ":SORIENTATION: " *orientation* "\n"))
+  (insert (concat ":ORIENTATION: " *orientation* "\n"))
   (insert (concat ":RELATIONSHIP: " *relationstatus* "\n"))
   (insert (concat ":RELIGION: " *religion* "\n"))
   (insert (concat ":QUIRK: " *quirk* "\n"))
@@ -457,3 +463,155 @@
   (insert (concat ":WIS: " (number-to-string *wis*) "\n"))
   (insert (concat ":CHA: " (number-to-string *cha*) "\n"))
   )
+
+(defun npc-generate-male
+    (&optional race)
+  "Creates an npc with an specified Gender or Race.
+   Gender can be M or F.
+   Race can be Dragonborn, Dwarf, Elf, Gnome, Halfling,
+   Half-elf, Half-orc, Human, Tiefling.
+   "
+  (interactive)
+  (setf *gender* "M")
+  (setf *race* nil)
+  ;; set race
+  (if (string-equal race nil)
+      (setf *race*
+            (seq-random-elt *charrace*)
+            )
+    (setf *race* race)
+    )
+  ;; Race conditionals
+  (if (string-equal *race* "Dragonborn")
+      (dragonborn-race *gender*))
+  (if (string-equal *race* "Dwarf")
+      (dwarf-race *gender*))
+  (if (string-equal *race* "Elf")
+      (elf-race *gender*))
+  (if (string-equal *race* "Gnome")
+      (gnome-race *gender*))
+  (if (string-equal *race* "Halfling")
+      (halfling-race *gender*))
+  (if (string-equal *race* "Half-elf")
+      (half-elf-race *gender*))
+  (if (string-equal *race* "Half-orc")
+      (half-orc-race *gender*))
+  (if (string-equal *race* "Human")
+      (human-race *gender*))
+  (if (string-equal *race* "Tiefling")
+      (tiefling-race *gender*)
+    )
+  ;; Write Stats to screen
+  (insert (concat ":NAME: " *name* "\n"))
+  (insert (concat ":RACE: " *race* "\n"))
+  (insert (concat ":SEX: " *gender* "\n"))
+  (insert (concat ":AGE: " (number-to-string *age*) "\n"))
+  (insert (concat ":OCCUPATION: "  *occupation* "\n"))
+  (insert (concat ":FACE: " *face* "\n"))
+  (insert (concat ":HAIR: " *hair* "\n"))
+  (insert (concat ":SKIN: " *skin* "\n"))
+  (insert (concat ":EYES: " *eyes* "\n"))
+  (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
+  (insert (concat ":BUILD: " *build* "\n"))
+  (insert (concat ":PERSONALITY: "
+                  *special1* "\n "
+                  *special2* "\n "
+                  *trait1* "\n"
+                  *trait2* "\n"
+                  )
+          )
+  (insert (concat ":ORIENTATION: " *orientation* "\n"))
+  (insert (concat ":RELATIONSHIP: " *relationstatus* "\n"))
+  (insert (concat ":RELIGION: " *religion* "\n"))
+  (insert (concat ":QUIRK: " *quirk* "\n"))
+  (insert (concat ":HOOK: " *hook* "\n"))
+  (insert (concat ":STR: " (number-to-string *str*) "\n"))
+  (insert (concat ":DEX: " (number-to-string *dex*) "\n"))
+  (insert (concat ":CON: " (number-to-string *con*) "\n"))
+  (insert (concat ":INT: " (number-to-string *int*) "\n"))
+  (insert (concat ":WIS: " (number-to-string *wis*) "\n"))
+  (insert (concat ":CHA: " (number-to-string *cha*) "\n"))
+  )
+
+(defun npc-generate-female
+    (&optional race)
+  "Creates an npc with an specified Gender or Race.
+   Gender can be M or F.
+   Race can be Dragonborn, Dwarf, Elf, Gnome, Halfling,
+   Half-elf, Half-orc, Human, Tiefling.
+   "
+  (interactive)
+  (setf *gender* "F")
+  (setf *race* nil)
+  ;; set race
+  (if (string-equal race nil)
+      (setf *race*
+            (seq-random-elt *charrace*)
+            )
+    (setf *race* race)
+    )
+  ;; Race conditionals
+  (if (string-equal *race* "Dragonborn")
+      (dragonborn-race *gender*))
+  (if (string-equal *race* "Dwarf")
+      (dwarf-race *gender*))
+  (if (string-equal *race* "Elf")
+      (elf-race *gender*))
+  (if (string-equal *race* "Gnome")
+      (gnome-race *gender*))
+  (if (string-equal *race* "Halfling")
+      (halfling-race *gender*))
+  (if (string-equal *race* "Half-elf")
+      (half-elf-race *gender*))
+  (if (string-equal *race* "Half-orc")
+      (half-orc-race *gender*))
+  (if (string-equal *race* "Human")
+      (human-race *gender*))
+  (if (string-equal *race* "Tiefling")
+      (tiefling-race *gender*)
+    )
+  ;; Write Stats to screen
+  (insert (concat ":NAME: " *name* "\n"))
+  (insert (concat ":RACE: " *race* "\n"))
+  (insert (concat ":SEX: " *gender* "\n"))
+  (insert (concat ":AGE: " (number-to-string *age*) "\n"))
+  (insert (concat ":OCCUPATION: "  *occupation* "\n"))
+  (insert (concat ":FACE: " *face* "\n"))
+  (insert (concat ":HAIR: " *hair* "\n"))
+  (insert (concat ":SKIN: " *skin* "\n"))
+  (insert (concat ":EYES: " *eyes* "\n"))
+  (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
+  (insert (concat ":BUILD: " *build* "\n"))
+  (insert (concat ":PERSONALITY: "
+                  *special1* "\n "
+                  *special2* "\n "
+                  *trait1* "\n"
+                  *trait2* "\n"
+                  )
+          )
+  (insert (concat ":ORIENTATION: " *orientation* "\n"))
+  (insert (concat ":RELATIONSHIP: " *relationstatus* "\n"))
+  (insert (concat ":RELIGION: " *religion* "\n"))
+  (insert (concat ":QUIRK: " *quirk* "\n"))
+  (insert (concat ":HOOK: " *hook* "\n"))
+  (insert (concat ":STR: " (number-to-string *str*) "\n"))
+  (insert (concat ":DEX: " (number-to-string *dex*) "\n"))
+  (insert (concat ":CON: " (number-to-string *con*) "\n"))
+  (insert (concat ":INT: " (number-to-string *int*) "\n"))
+  (insert (concat ":WIS: " (number-to-string *wis*) "\n"))
+  (insert (concat ":CHA: " (number-to-string *cha*) "\n"))
+  )
+
+(define-minor-mode npc-gen-mode
+  "Generates NPC's"
+  :lighter "npc-gen"
+  :keymap (let ((map (make-sparse-keymap)))
+            (define-key map (kbd "C-c r") 'npc-generate)
+            (define-key map (kbd "C-c m") 'npc-generate-male)
+            (define-key map (kbd "C-c f") 'npc-generate-female)
+          map)
+  )
+
+(provide 'npc-gen-mode)
+
+  
