@@ -445,8 +445,8 @@
   (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
   (insert (concat ":BUILD: " *build* "\n"))
   (insert (concat ":PERSONALITY: "
-                  *special1* "\n "
-                  *special2* "\n "
+                  *special1* "\n
+                  *special2* "\n"
                   *trait1* "\n"
                   *trait2* "\n"
                   )
@@ -514,8 +514,8 @@
   (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
   (insert (concat ":BUILD: " *build* "\n"))
   (insert (concat ":PERSONALITY: "
-                  *special1* "\n "
-                  *special2* "\n "
+                  *special1* "\n"
+                  *special2* "\n"
                   *trait1* "\n"
                   *trait2* "\n"
                   )
@@ -583,8 +583,8 @@
   (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
   (insert (concat ":BUILD: " *build* "\n"))
   (insert (concat ":PERSONALITY: "
-                  *special1* "\n "
-                  *special2* "\n "
+                  *special1* "\n"
+                  *special2* "\n"
                   *trait1* "\n"
                   *trait2* "\n"
                   )

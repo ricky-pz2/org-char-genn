@@ -481,29 +481,29 @@
     ()
   (seq-random-elt
    (apply 'append
-          (make-list 1 "an anorexic")
+          (make-list 1 "anorexic")
           nil
-          (make-list 1 "a skinny")
+          (make-list 1 "skinny")
           nil
-          (make-list 1 "a lean")
+          (make-list 1 "lean")
           nil
-          (make-list 1 "an athletic")
+          (make-list 1 "athletic")
           nil
-          (make-list 1 "a muscular")
+          (make-list 1 "muscular")
           nil
-          (make-list 1 "a regular")
+          (make-list 1 "regular")
           nil
-          (make-list 1 "a beefy")
+          (make-list 1 "beefy")
           nil
-          (make-list 1 "a massive")
+          (make-list 1 "massive")
           nil
-          (make-list 1 "a round")
+          (make-list 1 "round")
           nil
-          (make-list 1 "a fat")
+          (make-list 1 "fat")
           nil
-          (make-list 1 "an overweight")
+          (make-list 1 "overweight")
           nil
-          (make-list 1 "an obese")
+          (make-list 1 "obese")
           nil
           )
    )
@@ -776,29 +776,29 @@
     ()
   (seq-random-elt
    (apply 'append
-          (make-list 5 "an anorexic")
+          (make-list 5 "anorexic")
           nil
-          (make-list 30 "a skinny")
+          (make-list 30 "skinny")
           nil
-          (make-list 40 "a lean")
+          (make-list 40 "lean")
           nil
-          (make-list 30 "an athletic")
+          (make-list 30 "athletic")
           nil
-          (make-list 16 "a muscular")
+          (make-list 16 "muscular")
           nil
-          (make-list 20 "a regular")
+          (make-list 20 "regular")
           nil
-          (make-list 5 "a beefy")
+          (make-list 5 "beefy")
           nil
-          (make-list 2 "a massive")
+          (make-list 2 "massive")
           nil
-          (make-list 10 "a round")
+          (make-list 10 "round")
           nil
-          (make-list 3 "a fat")
+          (make-list 3 "fat")
           nil
-          (make-list 2 "an overweight")
+          (make-list 2 "overweight")
           nil
-          (make-list 1 "an obese")
+          (make-list 1 "obese")
           nil
           )
    )
@@ -1066,25 +1066,25 @@
     ()
   (seq-random-elt
    (apply 'append
-          (make-list 1 "a skinny")
+          (make-list 1 "skinny")
           nil
-          (make-list 2 "a lean")
+          (make-list 2 "lean")
           nil
-          (make-list 4 "an athletic")
+          (make-list 4 "athletic")
           nil
-          (make-list 12 "a muscular")
+          (make-list 12 "muscular")
           nil
-          (make-list 6 "a regular")
+          (make-list 6 "regular")
           nil
-          (make-list 16 "a beefy")
+          (make-list 16 "beefy")
           nil
-          (make-list 8 "a massive")
+          (make-list 8 "massive")
           nil
-          (make-list 4 "a round")
+          (make-list 4 "round")
           nil
-          (make-list 3 "a fat")
+          (make-list 3 "fat")
           nil
-          (make-list 1 "an overweight")
+          (make-list 1 "overweight")
           nil
           )
    )   
