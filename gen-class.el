@@ -281,9 +281,11 @@
   (seq-random-elt
    (list
     (class-list)
-    (profession)
-    (profession)
-    (profession)
+    (class-list)
+    (class-list)
+    (class-list)
+    (class-list)
+    (class-list)
     (profession)
     )
    )

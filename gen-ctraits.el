@@ -1469,7 +1469,7 @@
           nil
           (list (concat "is missing " (missing-limb)))
           nil
-          (list (concat "is " (mod-gen) " colorblnd"))
+          (list (concat "is " (mod-gen) " colorbilnd"))
           nil
           (list (concat "is " (mod-gen) " cross-eyed"))
           nil
@@ -1589,19 +1589,17 @@
     ()
   (seq-random-elt
    (apply 'append
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (good-face-mod) " " (good-looking)))
-          nil
-          (list (good-looking))
+          (list (concat (face-shape) " " (good-face-mod) " " (good-looking)))
           nil
           (list (good-looking))
           nil
@@ -1625,13 +1623,15 @@
           nil
           (list (good-looking))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          (list (good-looking))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          (list (concat (face-shape) " " (bad-face-mod) " " (bad-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          (list (concat (face-shape) " " (bad-face-mod) " " (bad-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (bad-face-mod) " " (bad-looking)))
+          (list (concat (face-shape) " " (bad-face-mod) " " (bad-looking)))
+          nil
+          (list (concat (face-shape) " " (bad-face-mod) " " (bad-looking)))
           nil
           (list (bad-looking))
           nil
@@ -1653,21 +1653,21 @@
           nil
           (list (bad-looking))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
-          (list (concat (face-shape) " " (mod-gen) " " (mod-gen) " " (normal-looking)))
+          (list (concat (face-shape) " " (mod-gen) " " (normal-looking)))
           nil
           (list (normal-looking))
           nil

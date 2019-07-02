@@ -107,7 +107,7 @@
   (setf *build* (strong-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -179,7 +179,7 @@
   (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
          )
        )
@@ -217,7 +217,7 @@
   (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -255,7 +255,7 @@
   (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -293,7 +293,7 @@
   (setf *build* (strong-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -331,7 +331,7 @@
   (setf *build* (weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -364,7 +364,7 @@
   (setf *build* (light-weight))
   (setf *face*
         (if (string-equal gender "M")
-            (concat (face-shape) " " (attractiveness) "face " (beard))
+            (concat (face-shape) " " (attractiveness) " face " (beard))
           (concat (face-shape) " " (attractiveness))
           )
         )
@@ -444,8 +444,8 @@
   (insert (concat ":EYES: " *eyes* "\n"))
   (insert (concat ":HEIGHT: " (inches-to-feet *height*) "\n"))
   (insert (concat ":BUILD: " *build* "\n"))
-  (insert (concat ":PERSONALITY: "
-                  *special1* "\n
+  (insert (concat ":PERSONALITY:" "\n"
+                  *special1* "\n"
                   *special2* "\n"
                   *trait1* "\n"
                   *trait2* "\n"
@@ -613,5 +613,3 @@
   )
 
 (provide 'npc-gen-mode)
-
-  
